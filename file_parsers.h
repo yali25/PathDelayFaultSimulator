@@ -59,7 +59,7 @@ BOOST_FUSION_ADAPT_STRUCT(circuit_io_object, (std::string, type)
 	(std::vector<std::string>, io_elements)
 	)
 
-	// this type was defined for saving the wires of the netlist file, but actually it never used,
+	// this type was defined for saving the wires of the netlist file, but actually it is never used,
 	// maybe it may also be useful for the future
 	typedef std::vector<std::string> wire_vec;
 
@@ -86,7 +86,7 @@ BOOST_FUSION_ADAPT_STRUCT(circuit, (std::string, circuit_name)
 	)
 	// From here the actuall parser starts, for understanding how this works it is useful
 	// to understand the Backus-Naur_Form  (http://en.wikipedia.org/wiki/Backus-Naur_Form)
-	// I will explain hoe the rule identifier %=  qi::lexeme[ (ascii::alnum >> -qi::char_('\'') >> *qi::char_("a-zA-Z_0-9") >> -(qi::char_('[') >> *ascii::digit >> qi::char_(']'))) ] works
+	// I will explain how the rule identifier %=  qi::lexeme[ (ascii::alnum >> -qi::char_('\'') >> *qi::char_("a-zA-Z_0-9") >> -(qi::char_('[') >> *ascii::digit >> qi::char_(']'))) ] works
 	// qi::lexeme says that as this level no spaces should be skipped, becaued if they would be skipped a wrong netlist could be parsed.
 	// ascii::alnum says that the identifier can start with a number or a character, then a ' may follow, this is because e.g. 1'G1 is valid in the netlist file, it means G1 is constant 1
 	// *qi::char_("a-zA-Z_0-9") says that now an abritraly long string with mixed characters and numbers can follow, also *ascii::alnum could be used here but the name could also contain _ and that character is not covered by ascii::alnum
