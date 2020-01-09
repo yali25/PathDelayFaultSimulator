@@ -429,7 +429,7 @@ int main(int argc, char* argv[])
 			std::vector<std::string>gpu_gate_type_and_state(final_number_of_nodes);
 			std::for_each(std::begin(gpu_gate_type_and_state), std::end(gpu_gate_type_and_state), [](std::string &str){str.reserve(170); });
 
-			const std::string dot_path = "\"C:\\Users\\yussuf\\Desktop\\release\\bin\\dot.exe\"";
+			const std::string dot_path = "\"C:\\Users\\user\\Desktop\\release\\bin\\dot.exe\"";
 			const std::string filename_wihtout_dot = std::string(filename.begin(), filename.begin() + filename.find_first_of('.'));
 			const std::string graph_dic = filename_wihtout_dot + "_Images";
 
