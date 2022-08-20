@@ -64,5 +64,5 @@ It must be saved at some location and then the path in the main.cpp must be set 
 const std::string dot_path = "\"C:\\Users\\user\\Desktop\\release\\bin\\dot.exe\"";
 ```
 
-This path must be updated to the with the location of the “dot.exe”.
+This path must be updated to the location of the “dot.exe”.
 
