@@ -1,4 +1,5 @@
-# Requirements:
+
+# Requirements
 In order to compile the project, the compiler needs to support C++11. This project was developed with Visual Studio 2013 Desktop edition. But the project may also compile with the g++ or other compilers. Only standard C++ is used, no operating system specific functions are used.
  
 The project makes usage of the Boost libraries and the OpenCL SDK. These two libraries need to be installed in order to compile the project.
@@ -39,8 +40,10 @@ With the help of these variables different versions of the program can be compil
 
 
 # How to run the program
-In order to run the program, three parameters must be passed to the program.
+In order to run the program, three parameters must be passed to the program:
 
+```
 SimpleParser.exe   netlist.vg  dummy.stil  NumberOfThreads
+```
 
 Actually only the first and last parameter are used but for the parameter in the middle a file should be passed which exists in the directory. The file in the middle must be a valid stilefile when the STILEFILE_CHECK is set to true. When the sequential version of the algorithm is used NumberOfThreads corresponds to the number of pattern which are simulated. If the any of the OpenCL versions is used the number of patterns which are simulated is: NumberOfThreads * 32 
