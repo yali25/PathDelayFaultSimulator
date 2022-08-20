@@ -3,9 +3,9 @@ This program can be used to simulate path delay faults in digital circuits as
 described in https://ieeexplore.ieee.org/document/6979116
 
 The flow of the program is as follows:
-* Read a netlist (circuit data) from a file (Boost Spirit is used for parsing the files)
-* Create a graph based on the data read in the previous step (the Boost Graph library is used for this part)
-* Run the simulation, the simulation function is written in OpenCL and can be executed on the CPU and GPU
+1. Read a netlist (circuit data) from a file (Boost Spirit is used for parsing the files).
+2. Create a graph based on the data read in the previous step (the Boost Graph library is used for this part)
+3. Run the simulation, the simulation function is written in OpenCL and can be executed on the CPU and GPU
 
 # Requirements
 In order to compile the project, the compiler needs to support C++11. This project was developed with Visual Studio 2013 Desktop edition. But the project may also compile with the g++ or other compilers. Only standard C++ is used, no operating system specific functions are used.
