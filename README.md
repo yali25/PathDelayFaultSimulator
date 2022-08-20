@@ -1,5 +1,5 @@
 # Description
-This program can be used to simulate path delay fault in digital circuits as
+This program can be used to simulate path delay faults in digital circuits as
 described in https://ieeexplore.ieee.org/document/6979116
 
 The flow of the program is as follows:
