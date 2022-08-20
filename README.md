@@ -55,3 +55,14 @@ SimpleParser.exe   netlist.vg  dummy.stil  NumberOfThreads
 ```
 
 Actually only the first and last parameter are used but for the parameter in the middle a file should be passed which exists in the directory. The file in the middle must be a valid stilefile when the STILEFILE_CHECK is set to true. When the sequential version of the algorithm is used NumberOfThreads corresponds to the number of pattern which are simulated. If the any of the OpenCL versions is used the number of patterns which are simulated is: NumberOfThreads * 32 
+
+# Generating the graph as image from 
+The program can generate an image for every thread. With the help of this image the simulation can be verified by hand. The program will automatically generate a “.bat” file, when this bat file is executed the images will be generated automatically. In order to generate the images the program “dot” must be downloaded from http://www.graphviz.org/.
+It must be saved at some location and then the path in the main.cpp must be set according to the location. The main file contains the following line:
+
+```
+const std::string dot_path = "\"C:\\Users\\user\\Desktop\\release\\bin\\dot.exe\"";
+```
+
+This path must be updated to the with the location of the “dot.exe”.
+
