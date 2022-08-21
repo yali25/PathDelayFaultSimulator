@@ -1,4 +1,4 @@
-/*__kernel void
+__kernel void
 logicsimulation(ulong length, __global uint *top_order,
                 __global uint *reverse_top_order, __global uint *gate_type,
                 __global uint2 *edges, __global uint2 *out_edges,
@@ -779,7 +779,7 @@ __kernel void logicsimulation_mem_opt(
   }
 
   /* traverse over the graph in reverse topological order */
-  for (int i = size - 1; i >= 0; i--) {
+  /*for (int i = size - 1; i >= 0; i--) {
     const unsigned int c_node = i;
     if ((out_edges[c_node].x != 0) &&
         (out_edges[c_node].y != 0)) // Node is not an output
@@ -809,11 +809,12 @@ __kernel void logicsimulation_mem_opt(
   }
 
   /* Last Interation over the circuit in topological order*/
+  /*
   for (int i = 0; i < size; i++) {
     const unsigned int c_node = i;
     const unsigned int g = gate_type[c_node];
     if (g) {
-      /* Check all input edges */
+      // Check all input edges 
       unsigned int temp_final_result = 0;
       unsigned int btrofr = 0;
 
@@ -831,7 +832,7 @@ __kernel void logicsimulation_mem_opt(
           is_robust_path_to_po[output_offset + edges[c_node].y] &
           robust_result2[output_offset + c_node] & btrofr;
 
-      /* Check all output edges */
+      // Check all output edges 
       if ((out_edges[c_node].x != 0) && (out_edges[c_node].y != 0)) {
         result1 = 0;
         result2 = 0;
